@@ -43,7 +43,7 @@ class TermsAndCondition {
       value: value ?? this.value,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
-      translatedValue: translatedValue ?? this.translatedValue,
+      translatedValue: translatedValue 
     );
   }
 }

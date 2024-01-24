@@ -19,15 +19,15 @@ final class TermsAndConditionRepository
         await rootBundle.loadString('assets/terms_and_conditions.json');
     final termsAndConditions = (json.decode(data) as List)
         .map((e) => TermsAndCondition.fromJson(e))
-        .toList()
-        .sublist(0, 5);
+        .toList();
+    // .sublist(0, 5);
     return termsAndConditions;
   }
 
   @override
   Future<List<TermsAndCondition>> loadMoreTermsAndConditions(
       int currentId) async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     final data =
         await rootBundle.loadString('assets/terms_and_conditions.json');
     final termsAndConditions = (json.decode(data) as List)

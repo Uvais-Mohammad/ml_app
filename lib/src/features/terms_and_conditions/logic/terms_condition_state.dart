@@ -12,7 +12,7 @@ class TermsConditionState {
     this.termsAndConditions = const [],
     this.loadingStatus = LoadingStatus.initial,
     this.loadingMoreStatus = LoadingStatus.initial,
-    this.hasReachedMax = false,
+    this.hasReachedMax = true,
     this.errorMessage,
     this.currentId,
   });

@@ -1,4 +1,5 @@
 import 'package:ai_app/src/features/terms_and_conditions/logic/terms_condition_provider.dart';
+import 'package:ai_app/src/features/terms_and_conditions/widgets/bottom_sheet_widget.dart';
 import 'package:ai_app/src/features/terms_and_conditions/widgets/terms_condition_card.dart';
 import 'package:ai_app/src/shared/enums/loading_status.dart';
 import 'package:ai_app/src/shared/services/translation/translation_service.dart';
@@ -74,11 +75,28 @@ class _TermsAndConditionScreenState
                       ],
                     );
                   } else if (state.hasReachedMax) {
-                    return const Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('No more terms and conditions'),
-                      ),
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text('No more terms and conditions'),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              showBottomSheet(
+                                context: context,
+                                builder: (context) => const BottomSheetWidget(),
+                              );
+                            },
+                            child: const Text('Add more'),
+                          ),
+                        ),
+                      ],
                     );
                   } else {
                     return const SizedBox();

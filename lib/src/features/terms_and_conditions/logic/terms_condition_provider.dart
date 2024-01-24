@@ -63,4 +63,36 @@ class TermsAndConditionProvider extends StateNotifier<TermsConditionState> {
       return e;
     }).toList());
   }
+
+  void saveTermsAndCondition({
+    required String termsAndCondition,
+  }) async {
+    state = state.copyWith(
+      termsAndConditions: [
+        ...state.termsAndConditions,
+        TermsAndCondition(
+          id: state.currentId! + 1,
+          value: termsAndCondition,
+          translatedValue: null,
+          createdAt: DateTime.now(),
+          updatedAt: DateTime.now(),
+        )
+      ],
+      currentId: state.currentId! + 1,
+    );
+  }
+
+  void updateTermsAndCondition({
+    required TermsAndCondition termsAndCondition,
+    required String value,
+  }) async {
+    state = state.copyWith(
+      termsAndConditions: state.termsAndConditions.map((e) {
+        if (e.id == termsAndCondition.id) {
+          return e.copyWith(value: value, updatedAt: DateTime.now(), translatedValue: null);
+        }
+        return e;
+      }).toList(),
+    );
+  }
 }
