@@ -12,11 +12,11 @@ class TermsAndConditionCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: ListTile(
         onTap: () {
           showModalBottomSheet(
             context: context,
-            isScrollControlled: true,
             builder: (context) => BottomSheetWidget(
               termsAndCondition: termsAndCondition,
             ),

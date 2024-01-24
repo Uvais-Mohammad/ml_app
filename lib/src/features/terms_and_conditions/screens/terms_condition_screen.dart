@@ -43,6 +43,7 @@ class _TermsAndConditionScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Terms and Conditions'),
       ),
@@ -78,17 +79,11 @@ class _TermsAndConditionScreenState
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        const Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text('No more terms and conditions'),
-                          ),
-                        ),
                         Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: ElevatedButton(
                             onPressed: () {
-                              showBottomSheet(
+                              showModalBottomSheet(
                                 context: context,
                                 builder: (context) => const BottomSheetWidget(),
                               );
