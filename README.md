@@ -57,8 +57,3 @@ flutter pub get
 flutter run
 ```
 
-### How to Run the tests
-1. Run the tests
-```sh
-flutter test
-```
