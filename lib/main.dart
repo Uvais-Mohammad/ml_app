@@ -1,4 +1,4 @@
-import 'package:ai_app/src/features/terms_and_conditions/screens/terms_condition_screen.dart';
+import 'package:ai_app/src/features/splash/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,7 +10,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: TermsAndConditionScreen(),
+      home: SplashScreen(),
     );
   }
 }
