@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ml_app/src/features/terms_and_conditions/logic/terms_condition_state.dart';
+import 'package:ml_app/src/features/terms_and_conditions/logic/terms_and_conditions/terms_condition_state.dart';
 import 'package:ml_app/src/features/terms_and_conditions/models/terms_condition.dart';
 import 'package:ml_app/src/features/terms_and_conditions/repository/i_terms_condition_repo.dart';
 import 'package:ml_app/src/features/terms_and_conditions/repository/terms_condition_repo.dart';
@@ -38,8 +38,10 @@ class TermsAndConditionProvider extends StateNotifier<TermsConditionState> {
   }
 
   void loadMoreTermsAndConditions() async {
-    if (state.hasReachedMax || state.loadingMoreStatus == LoadingStatus.loading)
+    if (state.hasReachedMax ||
+        state.loadingMoreStatus == LoadingStatus.loading) {
       return;
+    }
     state = state.copyWith(loadingMoreStatus: LoadingStatus.loading);
     final termsAndConditions = await _termsAndConditionRepository
         .loadMoreTermsAndConditions(state.currentId! + 1);

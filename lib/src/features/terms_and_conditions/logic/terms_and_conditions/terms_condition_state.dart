@@ -8,7 +8,8 @@ class TermsConditionState {
   final bool hasReachedMax;
   final String? errorMessage;
   final int? currentId;
-  TermsConditionState({
+
+  const TermsConditionState({
     this.termsAndConditions = const [],
     this.loadingStatus = LoadingStatus.initial,
     this.loadingMoreStatus = LoadingStatus.initial,

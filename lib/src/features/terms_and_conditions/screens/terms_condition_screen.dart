@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ml_app/src/features/terms_and_conditions/logic/terms_condition_provider.dart';
+import 'package:ml_app/src/features/terms_and_conditions/logic/terms_and_conditions/terms_condition_provider.dart';
 import 'package:ml_app/src/features/terms_and_conditions/widgets/bottom_sheet_widget.dart';
 import 'package:ml_app/src/features/terms_and_conditions/widgets/terms_condition_card.dart';
 import 'package:ml_app/src/shared/enums/loading_status.dart';
