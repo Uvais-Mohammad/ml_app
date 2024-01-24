@@ -1,7 +1,7 @@
-import 'package:ai_app/src/shared/services/translation/i_translation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
+import 'package:ml_app/src/shared/services/translation/i_translation_service.dart';
 
 final translationServiceProvider = Provider<ITranslationService>(
   (ref) => TranslationService(

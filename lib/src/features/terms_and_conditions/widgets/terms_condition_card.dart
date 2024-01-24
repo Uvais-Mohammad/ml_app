@@ -1,8 +1,8 @@
-import 'package:ai_app/src/features/terms_and_conditions/logic/terms_condition_provider.dart';
-import 'package:ai_app/src/features/terms_and_conditions/models/terms_condition.dart';
-import 'package:ai_app/src/features/terms_and_conditions/widgets/bottom_sheet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ml_app/src/features/terms_and_conditions/logic/terms_condition_provider.dart';
+import 'package:ml_app/src/features/terms_and_conditions/models/terms_condition.dart';
+import 'package:ml_app/src/features/terms_and_conditions/widgets/bottom_sheet_widget.dart';
 
 class TermsAndConditionCard extends ConsumerWidget {
   const TermsAndConditionCard({super.key, required this.termsAndCondition});
@@ -17,7 +17,6 @@ class TermsAndConditionCard extends ConsumerWidget {
           showModalBottomSheet(
             context: context,
             isScrollControlled: true,
-            
             builder: (context) => BottomSheetWidget(
               termsAndCondition: termsAndCondition,
             ),

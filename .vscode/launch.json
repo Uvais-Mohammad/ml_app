@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "ai_app",
+            "name": "ml_app",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "ai_app (profile mode)",
+            "name": "ml_app (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "ai_app (release mode)",
+            "name": "ml_app (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

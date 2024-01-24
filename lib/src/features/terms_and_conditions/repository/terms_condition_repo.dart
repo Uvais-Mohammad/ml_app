@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:ai_app/src/features/terms_and_conditions/models/terms_condition.dart';
-import 'package:ai_app/src/features/terms_and_conditions/repository/i_terms_condition_repo.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ml_app/src/features/terms_and_conditions/models/terms_condition.dart';
+import 'package:ml_app/src/features/terms_and_conditions/repository/i_terms_condition_repo.dart';
 
 final termsAndConditionRepositoryProvider =
     Provider<ITermsAndConditionRepository>(

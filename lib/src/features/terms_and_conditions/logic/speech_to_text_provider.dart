@@ -1,7 +1,7 @@
-import 'package:ai_app/src/shared/services/speech_to_text/i_speech_to_text_service.dart';
-import 'package:ai_app/src/shared/services/speech_to_text/speech_to_text_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ml_app/src/shared/services/speech_to_text/i_speech_to_text_service.dart';
+import 'package:ml_app/src/shared/services/speech_to_text/speech_to_text_service.dart';
 
 final speechToTextProvider =
     StateNotifierProvider<SpeechToTextProvider, (String, bool)>(

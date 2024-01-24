@@ -1,11 +1,11 @@
-import 'package:ai_app/src/features/terms_and_conditions/logic/terms_condition_state.dart';
-import 'package:ai_app/src/features/terms_and_conditions/models/terms_condition.dart';
-import 'package:ai_app/src/features/terms_and_conditions/repository/i_terms_condition_repo.dart';
-import 'package:ai_app/src/features/terms_and_conditions/repository/terms_condition_repo.dart';
-import 'package:ai_app/src/shared/enums/loading_status.dart';
-import 'package:ai_app/src/shared/services/translation/i_translation_service.dart';
-import 'package:ai_app/src/shared/services/translation/translation_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ml_app/src/features/terms_and_conditions/logic/terms_condition_state.dart';
+import 'package:ml_app/src/features/terms_and_conditions/models/terms_condition.dart';
+import 'package:ml_app/src/features/terms_and_conditions/repository/i_terms_condition_repo.dart';
+import 'package:ml_app/src/features/terms_and_conditions/repository/terms_condition_repo.dart';
+import 'package:ml_app/src/shared/enums/loading_status.dart';
+import 'package:ml_app/src/shared/services/translation/i_translation_service.dart';
+import 'package:ml_app/src/shared/services/translation/translation_service.dart';
 
 final termsAndConditionProvider =
     StateNotifierProvider<TermsAndConditionProvider, TermsConditionState>(
@@ -38,7 +38,8 @@ class TermsAndConditionProvider extends StateNotifier<TermsConditionState> {
   }
 
   void loadMoreTermsAndConditions() async {
-    if (state.hasReachedMax || state.loadingMoreStatus==LoadingStatus.loading) return;
+    if (state.hasReachedMax || state.loadingMoreStatus == LoadingStatus.loading)
+      return;
     state = state.copyWith(loadingMoreStatus: LoadingStatus.loading);
     final termsAndConditions = await _termsAndConditionRepository
         .loadMoreTermsAndConditions(state.currentId! + 1);
@@ -89,7 +90,8 @@ class TermsAndConditionProvider extends StateNotifier<TermsConditionState> {
     state = state.copyWith(
       termsAndConditions: state.termsAndConditions.map((e) {
         if (e.id == termsAndCondition.id) {
-          return e.copyWith(value: value, updatedAt: DateTime.now(), translatedValue: null);
+          return e.copyWith(
+              value: value, updatedAt: DateTime.now(), translatedValue: null);
         }
         return e;
       }).toList(),

@@ -10,7 +10,7 @@
         </intent>
     </queries>
     <application
-        android:label="ai_app"
+        android:label="ml_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

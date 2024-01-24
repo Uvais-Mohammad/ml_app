@@ -1,6 +1,6 @@
-import 'package:ai_app/src/shared/services/speech_to_text/i_speech_to_text_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ml_app/src/shared/services/speech_to_text/i_speech_to_text_service.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
@@ -30,7 +30,7 @@ final class SpeechToTextService implements ISpeechToTextService {
   void stopListening() async {
     await _speechToText.stop();
   }
-  
+
   @override
   bool get isListening => _speechToText.isListening;
 }

@@ -1,5 +1,5 @@
-import 'package:ai_app/src/features/terms_and_conditions/models/terms_condition.dart';
-import 'package:ai_app/src/shared/enums/loading_status.dart';
+import 'package:ml_app/src/features/terms_and_conditions/models/terms_condition.dart';
+import 'package:ml_app/src/shared/enums/loading_status.dart';
 
 class TermsConditionState {
   final List<TermsAndCondition> termsAndConditions;

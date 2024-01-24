@@ -1,3 +1,3 @@
-# ai_app
+# ml_app
 
 A new Flutter project.
