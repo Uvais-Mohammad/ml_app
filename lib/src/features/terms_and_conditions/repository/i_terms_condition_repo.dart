@@ -2,6 +2,5 @@ import 'package:ml_app/src/features/terms_and_conditions/models/terms_condition.
 
 abstract interface class ITermsAndConditionRepository {
   Future<List<TermsAndCondition>> getTermsAndConditions();
-  Future<bool> saveTermsAndCondition(TermsAndCondition termsAndCondition);
   Future<List<TermsAndCondition>> loadMoreTermsAndConditions(int currentId);
 }

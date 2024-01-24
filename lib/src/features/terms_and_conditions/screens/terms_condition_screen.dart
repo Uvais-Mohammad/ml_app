@@ -25,7 +25,6 @@ class _TermsAndConditionScreenState
       ref.read(termsAndConditionProvider.notifier).getTermsAndConditions();
     });
     scrollController.addListener(() {
-      //if user has reached near the bottom of the list
       if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
         ref
@@ -52,12 +51,13 @@ class _TermsAndConditionScreenState
           final state = ref.watch(termsAndConditionProvider);
           if (state.loadingStatus == LoadingStatus.loading) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator.adaptive(),
             );
           } else if (state.loadingStatus == LoadingStatus.loaded) {
             return ListView.builder(
               itemCount: state.termsAndConditions.length + 1,
               controller: scrollController,
+              physics: const ClampingScrollPhysics(),
               itemBuilder: (context, index) {
                 if (index == state.termsAndConditions.length) {
                   if (state.loadingMoreStatus == LoadingStatus.loading) {
@@ -66,7 +66,7 @@ class _TermsAndConditionScreenState
                         Center(
                           child: Padding(
                             padding: EdgeInsets.all(8.0),
-                            child: CircularProgressIndicator(),
+                            child: CircularProgressIndicator.adaptive(),
                           ),
                         ),
                         SizedBox(
@@ -98,9 +98,8 @@ class _TermsAndConditionScreenState
                         ),
                       ],
                     );
-                  } else {
-                    return const SizedBox();
                   }
+                  return const SizedBox();
                 }
                 final termsAndCondition = state.termsAndConditions[index];
                 return TermsAndConditionCard(

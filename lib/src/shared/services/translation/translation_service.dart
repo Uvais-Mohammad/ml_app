@@ -30,19 +30,12 @@ final class TranslationService implements ITranslationService {
   @override
   Future<String> getTranslation(String text) async {
     final translation = await _onDeviceTranslator.translateText(text);
-    print('translation: $translation');
+    debugPrint('translation: $translation');
     return translation;
   }
 
   @override
   Future<bool> downloadModel() async {
-    final bool response = await _modelManager
-        .isModelDownloaded(TranslateLanguage.english.bcpCode);
-    debugPrint('response: $response');
-
-    _modelManager
-        .downloadModel(TranslateLanguage.hindi.bcpCode)
-        .then((value) => debugPrint('value: $value'));
-    return true;
+    return _modelManager.downloadModel(TranslateLanguage.hindi.bcpCode);
   }
 }
