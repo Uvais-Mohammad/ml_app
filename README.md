@@ -15,7 +15,7 @@
 
 
 ### Project Structure
-The codebase adheres to a feature-level architecture, promoting a clean and modular organization that systematically separates concerns for UI components, data storage, and synchronization. The project encompasses the following 
+The codebase adheres to a feature-level architecture, promoting a clean and modular organization that systematically separates concerns for UI components, data storage. The project encompasses the following 
 
 - lib/
   - features/ 
