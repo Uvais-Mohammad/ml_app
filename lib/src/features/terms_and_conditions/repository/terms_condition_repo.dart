@@ -27,11 +27,13 @@ final class TermsAndConditionRepository
   @override
   Future<List<TermsAndCondition>> loadMoreTermsAndConditions(
       int currentId) async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 2));
     final data =
         await rootBundle.loadString('assets/terms_and_conditions.json');
     final termsAndConditions = (json.decode(data) as List)
-        .where((element) => element['id'] == currentId).map((e) => TermsAndCondition.fromJson(e)).toList();
+        .where((element) => element['id'] == currentId)
+        .map((e) => TermsAndCondition.fromJson(e))
+        .toList();
     return termsAndConditions;
   }
 

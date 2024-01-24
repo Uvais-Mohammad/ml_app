@@ -1,6 +1,7 @@
 import 'package:ai_app/src/features/terms_and_conditions/logic/terms_condition_provider.dart';
 import 'package:ai_app/src/features/terms_and_conditions/widgets/terms_condition_card.dart';
 import 'package:ai_app/src/shared/enums/loading_status.dart';
+import 'package:ai_app/src/shared/services/translation/translation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,17 +19,17 @@ class _TermsAndConditionScreenState
   @override
   void initState() {
     super.initState();
+    ref.read(translationServiceProvider).downloadModel();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(termsAndConditionProvider.notifier).getTermsAndConditions();
     });
     scrollController.addListener(() {
-      if (scrollController.position.atEdge) {
-        if (scrollController.position.pixels != 0) {
-          ref
-              .read(termsAndConditionProvider.notifier)
-              .loadMoreTermsAndConditions();
-          scrollController.jumpTo(scrollController.position.maxScrollExtent);
-        }
+      //if user has reached near the bottom of the list
+      if (scrollController.position.pixels ==
+          scrollController.position.maxScrollExtent) {
+        ref
+            .read(termsAndConditionProvider.notifier)
+            .loadMoreTermsAndConditions();
       }
     });
   }
