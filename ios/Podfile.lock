@@ -70,12 +70,17 @@ PODS:
   - nanopb/decode (2.30909.1)
   - nanopb/encode (2.30909.1)
   - PromisesObjC (2.3.1)
+  - speech_to_text (0.0.1):
+    - Flutter
+    - Try
   - SSZipArchive (2.1.5)
+  - Try (2.1.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - google_mlkit_commons (from `.symlinks/plugins/google_mlkit_commons/ios`)
   - google_mlkit_translation (from `.symlinks/plugins/google_mlkit_translation/ios`)
+  - speech_to_text (from `.symlinks/plugins/speech_to_text/ios`)
 
 SPEC REPOS:
   trunk:
@@ -93,6 +98,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SSZipArchive
+    - Try
 
 EXTERNAL SOURCES:
   Flutter:
@@ -101,6 +107,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_mlkit_commons/ios"
   google_mlkit_translation:
     :path: ".symlinks/plugins/google_mlkit_translation/ios"
+  speech_to_text:
+    :path: ".symlinks/plugins/speech_to_text/ios"
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
@@ -119,7 +127,9 @@ SPEC CHECKSUMS:
   MLKitVision: 8baa5f46ee3352614169b85250574fde38c36f49
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
+  speech_to_text: b43a7d99aef037bd758ed8e45d79bbac035d2dfe
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
+  Try: 5ef669ae832617b3cee58cb2c6f99fb767a4ff96
 
 PODFILE CHECKSUM: ad59a4c7b3cd0067725b45468914a29acf030df5
 
