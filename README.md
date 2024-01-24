@@ -35,6 +35,10 @@ The codebase adheres to a feature-level architecture, promoting a clean and modu
   - main.dart
 
 
+### Screen Recording
+
+
+https://github.com/Uvais-Mohammad/ml_app/assets/63300484/02bad46a-14b2-46f7-84a4-49a42372c42c
 
 
 
